@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AssetManager.Model.Asset>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Include Semantic UI CSS in the head section -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+
+<div class="ui container">
+    <h1 class="ui header">Index</h1>
+
+    <div class="ui segment">
+        <a asp-action="Create" class="ui primary button">Create New</a>
+    </div>
+
+    <table class="ui celled table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.AssetType)</th>
+                <th>@Html.DisplayNameFor(model => model.Brand)</th>
+                <th>@Html.DisplayNameFor(model => model.Model)</th>
+                <th>@Html.DisplayNameFor(model => model.Imeinumber1)</th>
+                <th>@Html.DisplayNameFor(model => model.AssetStatus)</th>
+                <th>@Html.DisplayNameFor(model => model.PurchaseDate)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.AssetType)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Brand)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Model)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Imeinumber1)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AssetStatus)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PurchaseDate)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.AssetId" class="ui mini primary button">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.AssetId" class="ui mini button">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.AssetId" class="ui mini negative button">Delete</a>
+                        </td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Include Semantic UI JS before the closing body tag -->
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>

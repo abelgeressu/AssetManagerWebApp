@@ -1,0 +1,50 @@
+﻿@model AssetManager.Model.Contract
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!-- Include Semantic UI CSS in the head section -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+
+<div class="ui container">
+    <h1 class="ui header">Details</h1>
+
+    <div class="ui form segment">
+        <h4 class="ui sub header">Contract</h4>
+        <div class="ui divider"></div>
+        <dl class="ui list">
+            <dt class="item">Provider</dt>
+            <dd class="item">@Html.DisplayFor(model => model.Provider)</dd>
+
+            <dt class="item">Phone Number</dt>
+            <dd class="item">@Html.DisplayFor(model => model.PhoneNumber)</dd>
+
+            <dt class="item">Pin Number</dt>
+            <dd class="item">@Html.DisplayFor(model => model.Pinnumber)</dd>
+
+            <dt class="item">PUK Number</dt>
+            <dd class="item">@Html.DisplayFor(model => model.Puknumber)</dd>
+
+            <dt class="item">Contract Start Date</dt>
+            <dd class="item">@Html.DisplayFor(model => model.ContractStartDate)</dd>
+
+            <dt class="item">Contract End Date</dt>
+            <dd class="item">@Html.DisplayFor(model => model.ContractEndDate)</dd>
+
+            <dt class="item">Monthly Cost</dt>
+            <dd class="item">@Html.DisplayFor(model => model.MonthlyCost)</dd>
+
+            <dt class="item">Data Limit</dt>
+            <dd class="item">@Html.DisplayFor(model => model.DataLimit)</dd>
+        </dl>
+    </div>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.ContractId" class="ui primary button">Edit</a> |
+        <a asp-action="Index" class="ui button">Back to List</a>
+    </div>
+</div>
+
+<!-- Include Semantic UI JS before the closing body tag -->
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>

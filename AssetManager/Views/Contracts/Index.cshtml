@@ -1,0 +1,52 @@
+﻿@model IEnumerable<AssetManager.Model.Contract>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Include Semantic UI CSS in the head section -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+
+<div class="ui container">
+    <h1 class="ui header">Index</h1>
+
+    <p>
+        <a asp-action="Create" class="ui primary button">Create New</a>
+    </p>
+    <table class="ui celled table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Provider)</th>
+                <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+                <th>@Html.DisplayNameFor(model => model.ContractStartDate)</th>
+                <th>@Html.DisplayNameFor(model => model.ContractEndDate)</th>
+                <th>@Html.DisplayNameFor(model => model.MonthlyCost)</th>
+                <th>@Html.DisplayNameFor(model => model.DataLimit)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Provider)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Puknumber)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ContractStartDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ContractEndDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.MonthlyCost)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DataLimit)</td>
+                        <td>
+                            <div class="ui buttons">
+                                <a asp-action="Edit" asp-route-id="@item.ContractId" class="ui primary button">Edit</a>
+                                <a asp-action="Details" asp-route-id="@item.ContractId" class="ui button">Details</a>
+                                <a asp-action="Delete" asp-route-id="@item.ContractId" class="ui red button">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Include Semantic UI JS before the closing body tag -->
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>

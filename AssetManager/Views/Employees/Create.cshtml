@@ -1,0 +1,62 @@
+﻿@model AssetManager.Model.Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="ui container">
+    <h1 class="ui header">Create</h1>
+
+    <h4 class="ui dividing header">Employee</h4>
+
+    <div class="ui segment">
+        <form asp-action="Create" class="ui form">
+            <div asp-validation-summary="ModelOnly" class="ui error message"></div>
+
+            <div class="field">
+                <label asp-for="EmployeeId">Employee ID</label>
+                <input asp-for="EmployeeId" class="ui input" />
+                <span asp-validation-for="EmployeeId" class="ui red pointing label"></span>
+            </div>
+
+            <div class="field">
+                <label asp-for="GlobalId">Global ID</label>
+                <input asp-for="GlobalId" class="ui input" />
+                <span asp-validation-for="GlobalId" class="ui red pointing label"></span>
+            </div>
+
+            <div class="field">
+                <label asp-for="FirstName">First Name</label>
+                <input asp-for="FirstName" class="ui input" />
+                <span asp-validation-for="FirstName" class="ui red pointing label"></span>
+            </div>
+
+            <div class="field">
+                <label asp-for="LastName">Last Name</label>
+                <input asp-for="LastName" class="ui input" />
+                <span asp-validation-for="LastName" class="ui red pointing label"></span>
+            </div>
+
+            <div class="field">
+                <label asp-for="Email">Email</label>
+                <input asp-for="Email" class="ui input" />
+                <span asp-validation-for="Email" class="ui red pointing label"></span>
+            </div>
+
+            <div class="field">
+                <label asp-for="Department">Department</label>
+                <input asp-for="Department" class="ui input" />
+                <span asp-validation-for="Department" class="ui red pointing label"></span>
+            </div>
+
+            <div class="field">
+                <label asp-for="Position">Position</label>
+                <input asp-for="Position" class="ui input" />
+                <span asp-validation-for="Position" class="ui red pointing label"></span>
+            </div>
+
+            <button type="submit" class="ui primary button">Create</button>
+            <a asp-action="Index" class="ui button">Back to List</a>
+        </form>
+    </div>
+</div>

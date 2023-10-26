@@ -1,0 +1,94 @@
+﻿@model AssetManager.Model.Assignment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!-- Include Semantic UI CSS in the head section -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+
+<h1 class="ui header">Create</h1>
+
+<h4 class="ui sub header">Assignment</h4>
+<div class="ui divider"></div>
+
+<div class="ui form segment">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="ui error message"></div>
+
+        <div class="field">
+            <label asp-for="AssignmentId"></label>
+            <input asp-for="AssignmentId" />
+            <span asp-validation-for="AssignmentId" class="ui pointing red basic label"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="EmployeeId"></label>
+            <select asp-for="EmployeeId" asp-items="ViewBag.EmployeeId"></select>
+        </div>
+
+        <div class="field">
+            <label asp-for="AssetId"></label>
+            <select asp-for="AssetId" asp-items="ViewBag.AssetId"></select>
+        </div>
+
+        <div class="field">
+            <label asp-for="ContractId"></label>
+            <select asp-for="ContractId" asp-items="ViewBag.ContractId"></select>
+        </div>
+
+        <div class="field">
+            <label asp-for="AssignmentDate"></label>
+            <input asp-for="AssignmentDate" />
+            <span asp-validation-for="AssignmentDate" class="ui pointing red basic label"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="ReturnDate"></label>
+            <input asp-for="ReturnDate" />
+            <span asp-validation-for="ReturnDate" class="ui pointing red basic label"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="Status"></label>
+            <input asp-for="Status" />
+            <span asp-validation-for="Status" class="ui pointing red basic label"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="ChangeLogId"></label>
+            <select asp-for="ChangeLogId" asp-items="ViewBag.ChangeLogId"></select>
+        </div>
+
+        <div class="field">
+            <button type="submit" class="ui primary button">Create</button>
+
+             <a asp-action="Index" class="ui button">Cancel</a>
+        </div>
+        <div>
+           
+        </div>
+    </form>
+</div>
+
+<div class="field">
+    <label asp-for="AssignmentId"></label>
+    <input asp-for="AssignmentId" />
+    <span asp-validation-for="AssignmentId" class="ui pointing red basic label"></span>
+    @if (ViewData.ModelState.ContainsKey("AssignmentId") && ViewData.ModelState["AssignmentId"].Errors.Count > 0)
+    {
+            <div class="ui warning message">
+                <i class="warning icon"></i>
+            @ViewData.ModelState["AssignmentId"].Errors[0].ErrorMessage
+            </div>
+    }
+</div>
+
+
+
+<!-- Include Semantic UI JS before the closing body tag -->
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

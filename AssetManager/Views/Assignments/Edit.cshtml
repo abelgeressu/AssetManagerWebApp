@@ -1,0 +1,79 @@
+﻿@model AssetManager.Model.Assignment
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!-- Include Semantic UI CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+
+<style>
+    .spaced-list .item {
+        line-height: 1.2;
+        margin-bottom: 1.0em; 
+    }
+    .spaced-header {
+        margin-bottom: 1.5em;
+    }
+</style>
+
+<div class="ui container">
+    <h1 class="ui header spaced-header">Edit</h1>
+    <h4 class="ui dividing header spaced-header">Assignment</h4>
+
+    <form asp-action="Edit" class="ui form segment">
+        <input type="hidden" asp-for="AssignmentId" />
+
+        <!-- Each form-group will be converted to a Semantic UI field -->
+        <div class="field">
+            <label asp-for="EmployeeId"></label>
+            <select asp-for="EmployeeId" asp-items="ViewBag.EmployeeId"></select>
+            <span asp-validation-for="EmployeeId" class="ui pointing red basic label"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="AssetId"></label>
+            <select asp-for="AssetId" asp-items="ViewBag.AssetId"></select>
+            <span asp-validation-for="AssetId" class="ui pointing red basic label"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="ContractId"></label>
+            <select asp-for="ContractId" asp-items="ViewBag.ContractId"></select>
+            <span asp-validation-for="ContractId" class="ui pointing red basic label"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="AssignmentDate"></label>
+            <input asp-for="AssignmentDate" />
+            <span asp-validation-for="AssignmentDate" class="ui pointing red basic label"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="ReturnDate"></label>
+            <input asp-for="ReturnDate" />
+            <span asp-validation-for="ReturnDate" class="ui pointing red basic label"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="Status"></label>
+            <input asp-for="Status" />
+            <span asp-validation-for="Status" class="ui pointing red basic label"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="ChangeLogId"></label>
+            <select asp-for="ChangeLogId" asp-items="ViewBag.ChangeLogId"></select>
+            <span asp-validation-for="ChangeLogId" class="ui pointing red basic label"></span>
+        </div>
+
+        <button type="submit" class="ui primary button">Save</button>
+        <a asp-action="Index" class="ui button">Back to List</a>
+    </form>
+
+    <!-- Action Button -->
+    
+</div>
+
+<!-- Include Semantic UI JS -->
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>

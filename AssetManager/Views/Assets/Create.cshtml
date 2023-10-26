@@ -1,0 +1,114 @@
+﻿@model AssetManager.Model.Asset
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!-- Include Semantic UI CSS in the head section -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+
+<div class="ui container">
+    <h1 class="ui header">Create</h1>
+
+    <h4 class="ui sub header">Asset</h4>
+    <div class="ui divider"></div>
+
+    <div class="ui form segment">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="ui error message"></div>
+
+            <!-- AssetId -->
+            <div class="field">
+                <label asp-for="AssetId"></label>
+                <input asp-for="AssetId" placeholder="Asset ID" />
+                <span asp-validation-for="AssetId" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- AssetType -->
+            <div class="field">
+                <label asp-for="AssetType"></label>
+                <input asp-for="AssetType" placeholder="Asset Type" />
+                <span asp-validation-for="AssetType" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- Brand -->
+            <div class="field">
+                <label asp-for="Brand"></label>
+                <input asp-for="Brand" placeholder="Brand" />
+                <span asp-validation-for="Brand" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- Model -->
+            <div class="field">
+                <label asp-for="Model"></label>
+                <input asp-for="Model" placeholder="Model" />
+                <span asp-validation-for="Model" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- SerialNumber -->
+            <div class="field">
+                <label asp-for="SerialNumber"></label>
+                <input asp-for="SerialNumber" placeholder="Serial Number" />
+                <span asp-validation-for="SerialNumber" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- Imeinumber1 -->
+            <div class="field">
+                <label asp-for="Imeinumber1"></label>
+                <input asp-for="Imeinumber1" placeholder="IMEI Number 1" />
+                <span asp-validation-for="Imeinumber1" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- Imeinumber2 -->
+            <div class="field">
+                <label asp-for="Imeinumber2"></label>
+                <input asp-for="Imeinumber2" placeholder="IMEI Number 2" />
+                <span asp-validation-for="Imeinumber2" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- Accessories -->
+            <div class="field">
+                <label asp-for="Accessories"></label>
+                <input asp-for="Accessories" placeholder="Accessories" />
+                <span asp-validation-for="Accessories" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- Capacity -->
+            <div class="field">
+                <label asp-for="Capacity"></label>
+                <input asp-for="Capacity" placeholder="Capacity" />
+                <span asp-validation-for="Capacity" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- AssetStatus -->
+            <div class="field">
+                <label asp-for="AssetStatus"></label>
+                <input asp-for="AssetStatus" placeholder="Asset Status" />
+                <span asp-validation-for="AssetStatus" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- PurchaseDate -->
+            <div class="field">
+                <label asp-for="PurchaseDate"></label>
+                <input asp-for="PurchaseDate" placeholder="Purchase Date" />
+                <span asp-validation-for="PurchaseDate" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- WarrantyExpiryDate -->
+            <div class="field">
+                <label asp-for="WarrantyExpiryDate"></label>
+                <input asp-for="WarrantyExpiryDate" placeholder="Warranty Expiry Date" />
+                <span asp-validation-for="WarrantyExpiryDate" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="field">
+                <button type="submit" class="ui primary button">Create</button>
+                <a asp-action="Index" class="ui button">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Include Semantic UI JS before the closing body tag -->
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js

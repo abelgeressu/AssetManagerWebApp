@@ -1,0 +1,87 @@
+﻿@model AssetManager.Model.Contract
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!-- Include Semantic UI CSS in the head section -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+
+<div class="ui container">
+    <h1 class="ui header">Edit</h1>
+
+    <h4 class="ui sub header">Contract</h4>
+    <div class="ui divider"></div>
+
+    <div class="ui form segment">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="ui error message"></div>
+            <input type="hidden" asp-for="ContractId" />
+
+            <!-- Provider -->
+            <div class="field">
+                <label asp-for="Provider"></label>
+                <input asp-for="Provider" placeholder="Provider" />
+                <span asp-validation-for="Provider" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- PhoneNumber -->
+            <div class="field">
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber" placeholder="Phone Number" />
+                <span asp-validation-for="PhoneNumber" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- Pinnumber -->
+            <div class="field">
+                <label asp-for="Pinnumber"></label>
+                <input asp-for="Pinnumber" placeholder="Pin Number" />
+                <span asp-validation-for="Pinnumber" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- Puknumber -->
+            <div class="field">
+                <label asp-for="Puknumber"></label>
+                <input asp-for="Puknumber" placeholder="PUK Number" />
+                <span asp-validation-for="Puknumber" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- ContractStartDate -->
+            <div class="field">
+                <label asp-for="ContractStartDate"></label>
+                <input asp-for="ContractStartDate" placeholder="Contract Start Date" />
+                <span asp-validation-for="ContractStartDate" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- ContractEndDate -->
+            <div class="field">
+                <label asp-for="ContractEndDate"></label>
+                <input asp-for="ContractEndDate" placeholder="Contract End Date" />
+                <span asp-validation-for="ContractEndDate" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- MonthlyCost -->
+            <div class="field">
+                <label asp-for="MonthlyCost"></label>
+                <input asp-for="MonthlyCost" placeholder="Monthly Cost" />
+                <span asp-validation-for="MonthlyCost" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- DataLimit -->
+            <div class="field">
+                <label asp-for="DataLimit"></label>
+                <input asp-for="DataLimit" placeholder="Data Limit" />
+                <span asp-validation-for="DataLimit" class="ui pointing red basic label"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="field">
+                <button type="submit" class="ui primary button">Save</button>
+                <a asp-action="Index" class="ui button">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Include Semantic UI JS before the closing body tag -->
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>

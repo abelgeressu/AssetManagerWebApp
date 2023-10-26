@@ -1,0 +1,85 @@
+﻿@model AssetManager.Model.Assignment
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!-- Include Semantic UI CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+
+<style>
+    .spaced-list .item {
+        line-height: 1.2;
+        margin-bottom: 1.0em; /* Added margin to space out each item */
+    }
+    .spaced-header {
+        margin-bottom: 1.5em;
+    }
+</style>
+
+<div class="ui container">
+    <h1 class="ui header">Details</h1>
+
+    <div class="ui segment">
+        <h4 class="ui dividing header spaced-header">Assignment</h4>
+        <div class="ui list spaced-list">
+            <div class="item">
+                <strong>@Html.DisplayNameFor(model => model.Asset.AssetType):</strong> @Html.DisplayFor(model => model.Asset.AssetType)
+            </div>
+            <div class="item">
+                <strong>@Html.DisplayNameFor(model => model.Asset.Brand):</strong> @Html.DisplayFor(model => model.Asset.Brand)
+            </div>
+            <div class="item">
+                <strong>@Html.DisplayNameFor(model => model.Asset.Model):</strong> @Html.DisplayFor(model => model.Asset.Model)
+            </div>
+            <div class="item">
+                <strong>@Html.DisplayNameFor(model => model.Asset.SerialNumber):</strong> @Html.DisplayFor(model => model.Asset.SerialNumber)
+            </div>
+            <div class="item">
+                <strong>@Html.DisplayNameFor(model => model.AssignmentDate):</strong> @Html.DisplayFor(model => model.AssignmentDate)
+            </div>
+            <div class="item">
+                <strong>@Html.DisplayNameFor(model => model.ReturnDate):</strong> @Html.DisplayFor(model => model.ReturnDate)
+            </div>
+            <div class="item">
+                <strong>@Html.DisplayNameFor(model => model.Status):</strong> @Html.DisplayFor(model => model.Status)
+            </div>
+            <div class="item">
+                <strong>@Html.DisplayNameFor(model => model.Asset.AssetId):</strong> @Html.DisplayFor(model => model.Asset.AssetId)
+            </div>
+            <div class="item">
+                <strong>@Html.DisplayNameFor(model => model.ChangeLog.ChangedBy):</strong> @Html.DisplayFor(model => model.ChangeLog.ChangedBy)
+            </div>
+        </div>
+
+        <h4 class="ui dividing header spaced-header">Contract</h4>
+        <div class="ui list spaced-list">
+            <div class="item">
+                <strong>@Html.DisplayNameFor(model => model.Contract.Provider):</strong> @Html.DisplayFor(model => model.Contract.Provider)
+            </div>
+            <div class="item">
+                <strong>@Html.DisplayNameFor(model => model.Contract.PhoneNumber):</strong> @Html.DisplayFor(model => model.Contract.PhoneNumber)
+            </div>
+        </div>
+
+        <h4 class="ui dividing header spaced-header">Employee</h4>
+        <div class="ui list spaced-list">
+            <div class="item">
+                <strong>@Html.DisplayNameFor(model => model.Employee.FirstName):</strong> @Html.DisplayFor(model => model.Employee.FirstName)
+            </div>
+            <div class="item">
+                <strong>@Html.DisplayNameFor(model => model.Employee.LastName):</strong> @Html.DisplayFor(model => model.Employee.LastName)
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="ui buttons">
+        <a asp-action="Edit" asp-route-id="@Model?.AssignmentId" class="ui primary button">Edit</a>
+        <div class="or"></div>
+        <a asp-action="Index" class="ui button">Back to List</a>
+    </div>
+</div>
+
+<!-- Include Semantic UI JS -->
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>

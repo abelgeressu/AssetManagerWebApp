@@ -1,0 +1,88 @@
+﻿@model IEnumerable<AssetManager.Model.Assignment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="ui header">Index</h1>
+
+<div class="ui buttons">
+    <a asp-action="Create" class="ui positive button">Create New</a>
+</div>
+
+
+<table class="ui celled table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["ModelSortParam"]">Model <i class="sort icon"></i></a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["BrandSortParam"]">Brand <i class="sort icon"></i></a>
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contract.Provider)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Contract.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee.LastName)
+            </th>
+
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["StartDateSortParam"]">Start Date <i class="sort icon"></i></a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["EndDateSortParam"]">End Date <i class="sort icon"></i></a>
+            </th>
+             <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Asset.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Asset.Brand)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contract.Provider)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contract.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee.LastName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssignmentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReturnDate)
+                </td>
+                    <td>
+                        <div class="ui small buttons">
+                            <a asp-action="Edit" asp-route-id="@item.AssignmentId" class="ui button">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.AssignmentId" class="ui button">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.AssignmentId" class="ui red button">Delete</a>
+                        </div>
+                    </td>
+            </tr>
+        }
+    </tbody>
+</table>

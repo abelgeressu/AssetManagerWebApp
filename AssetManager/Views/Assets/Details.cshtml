@@ -1,0 +1,92 @@
+﻿@model AssetManager.Model.Asset
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!-- Include Semantic UI CSS in the head section -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+
+<div class="ui container">
+    <h1 class="ui header">Details</h1>
+
+    <div>
+        <h4 class="ui sub header">Asset</h4>
+        <div class="ui divider"></div>
+        <dl class="ui list relaxed"> <!-- Added "relaxed" class for spacing -->
+            <!-- AssetType -->
+            <div class="item">
+                <dt class="ui header">@Html.DisplayNameFor(model => model.AssetType)</dt>
+                <dd>@Html.DisplayFor(model => model.AssetType)</dd>
+            </div>
+
+            <!-- Brand -->
+            <div class="item">
+                <dt class="ui header">@Html.DisplayNameFor(model => model.Brand)</dt>
+                <dd>@Html.DisplayFor(model => model.Brand)</dd>
+            </div>
+
+            <!-- Model -->
+            <div class="item">
+                <dt class="ui header">@Html.DisplayNameFor(model => model.Model)</dt>
+                <dd>@Html.DisplayFor(model => model.Model)</dd>
+            </div>
+
+            <!-- SerialNumber -->
+            <div class="item">
+                <dt class="ui header">@Html.DisplayNameFor(model => model.SerialNumber)</dt>
+                <dd>@Html.DisplayFor(model => model.SerialNumber)</dd>
+            </div>
+
+            <!-- Imeinumber1 -->
+            <div class="item">
+                <dt class="ui header">@Html.DisplayNameFor(model => model.Imeinumber1)</dt>
+                <dd>@Html.DisplayFor(model => model.Imeinumber1)</dd>
+            </div>
+
+            <!-- Imeinumber2 -->
+            <div class="item">
+                <dt class="ui header">@Html.DisplayNameFor(model => model.Imeinumber2)</dt>
+                <dd>@Html.DisplayFor(model => model.Imeinumber2)</dd>
+            </div>
+
+            <!-- Accessories -->
+            <div class="item">
+                <dt class="ui header">@Html.DisplayNameFor(model => model.Accessories)</dt>
+                <dd>@Html.DisplayFor(model => model.Accessories)</dd>
+            </div>
+
+            <!-- Capacity -->
+            <div class="item">
+                <dt class="ui header">@Html.DisplayNameFor(model => model.Capacity)</dt>
+                <dd>@Html.DisplayFor(model => model.Capacity)</dd>
+            </div>
+
+            <!-- AssetStatus -->
+            <div class="item">
+                <dt class="ui header">@Html.DisplayNameFor(model => model.AssetStatus)</dt>
+                <dd>@Html.DisplayFor(model => model.AssetStatus)</dd>
+            </div>
+
+            <!-- PurchaseDate -->
+            <div class="item">
+                <dt class="ui header">@Html.DisplayNameFor(model => model.PurchaseDate)</dt>
+                <dd>@Html.DisplayFor(model => model.PurchaseDate)</dd>
+            </div>
+
+            <!-- WarrantyExpiryDate -->
+            <div class="item">
+                <dt class="ui header">@Html.DisplayNameFor(model => model.WarrantyExpiryDate)</dt>
+                <dd>@Html.DisplayFor(model => model.WarrantyExpiryDate)</dd>
+            </div>
+        </dl>
+    </div>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.AssetId" class="ui primary button">Edit</a>
+        <a asp-action="Index" class="ui button">Back to List</a>
+    </div>
+</div>
+
+<!-- Include Semantic UI JS before the closing body tag -->
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>

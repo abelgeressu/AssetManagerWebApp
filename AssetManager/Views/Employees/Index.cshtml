@@ -1,0 +1,68 @@
+﻿@model IEnumerable<AssetManager.Model.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="ui container">
+    <h1 class="ui header">Index</h1>
+
+    <p>
+        <a asp-action="Create" class="ui primary button">Create New</a>
+    </p>
+    <table class="ui celled table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.GlobalId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Department)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Position)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.GlobalId)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Department)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Position)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.EmployeeId" class="ui primary button">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.EmployeeId" class="ui button">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.EmployeeId" class="ui red button">Delete</a>
+                        </td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>

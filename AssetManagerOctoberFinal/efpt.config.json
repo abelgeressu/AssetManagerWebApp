@@ -1,0 +1,96 @@
+﻿{
+   "CodeGenerationMode": 3,
+   "ContextClassName": "AssetTrackerContext",
+   "ContextNamespace": "Data",
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": "Model",
+   "OutputContextPath": "Data",
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "AssetManagerOctoberFinal",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[Asset]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Assignment]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ChangeLog]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Contract]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Employee]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[EURSS_Mobile_Asset_CSV]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UserTable]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ContractOverview]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[MobilePhoneOverview]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[UserContractAssignment]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[UserPhoneAssignment]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[GetContractDetails]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetPhoneDetails]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetUserDetails]",
+         "ObjectType": 1
+      }
+   ],
+   "UiHint": "eurss-nb195\\sqldev.AssetTracker.dbo",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": true,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false
+}
